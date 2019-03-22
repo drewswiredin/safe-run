@@ -1,6 +1,6 @@
 import Soldier from "./soldier";
 
-class Commander {
+export default class Commander {
   constructor(timeOut = 200) {
     this.timeOut = timeOut
     this.soldiers = [];
@@ -100,4 +100,4 @@ class Commander {
   }
 }
 
-export default Commander;
+
