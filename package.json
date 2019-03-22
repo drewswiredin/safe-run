@@ -1,0 +1,42 @@
+{
+  "name": "safe-run",
+  "version": "1.0.0",
+  "description": "Run unsafe JavaScript using WebWorkers",
+  "main": "dist/index.js",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "webpack": "webpack",
+    "serve": "node 'server/server.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drewswiredin/safe-run.git"
+  },
+  "keywords": [
+    "Run",
+    "Execute",
+    "JavaScript",
+    "Task",
+    "Unsafe",
+    "Client",
+    "WebWorker",
+    "Worker",
+    "Sandbox",
+    "Isolated",
+    "Isolation"
+  ],
+  "author": "Andrew Holder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drewswiredin/safe-run/issues"
+  },
+  "homepage": "https://github.com/drewswiredin/safe-run#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "file-loader": "^3.0.1",
+    "rimraf": "^2.6.3",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
+  }
+}
