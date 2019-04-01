@@ -26,7 +26,7 @@ export default class Commander {
     });
 
     let that = this;
-    let promise = new Promise(function(resolve, reject) {
+    let promise = new Promise(function (resolve, reject) {
       that.resolves[`T${taskId}`] = resolve;
       that.rejects[`T${taskId}`] = reject;
     });
@@ -47,7 +47,9 @@ export default class Commander {
 
       //Start timer to kill and respawn soldier if task takes too long
       var that = this
-      setTimeout(function() {that.abortTask(soldierNum, taskId)}, this.timeOut)
+      setTimeout(function () {
+        that.abortTask(soldierNum, taskId)
+      }, this.timeOut)
 
       soldier.postMessage({
         type: "run",
@@ -75,9 +77,9 @@ export default class Commander {
     soldier.terminate();
   }
 
-  
+
   spawnSoldier(soldierNum) {
-    this.soldiers[soldierNum] = new Soldier(URL.createObjectURL(new Blob([`(${soldierJS})()`])))
+    this.soldiers[soldierNum] = new Worker(URL.createObjectURL(new Blob([`(${Soldier})()`])))
     this.soldierStatuses[soldierNum] = "ready";
 
     this.soldiers[soldierNum].onmessage = message => {
@@ -99,5 +101,3 @@ export default class Commander {
     };
   }
 }
-
-

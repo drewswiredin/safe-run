@@ -2,7 +2,7 @@ var webpack = require("webpack");
 
 module.exports = {
   mode: "development",
-  entry: __dirname + "/src/main.js",
+  entry: __dirname + "/src/index.js",
   output: {
     path: __dirname + "/dist/",
     filename: "index.js",
@@ -14,11 +14,9 @@ module.exports = {
     port: 3000
   },
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        loader: ["babel-loader"]
-      }
-    ]
+    rules: [{
+      test: /\.js$/,
+      loader: ["babel-loader"]
+    }]
   }
 };

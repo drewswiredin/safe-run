@@ -5,8 +5,8 @@ var path = require('path');
 var server = http.createServer(function (request, response) {
     var filePath = './dist' + request.url;
     if (filePath == './dist/')
-        filePath = './dist/index.html';
-        
+        filePath = './src/index.html';
+
     var extname = path.extname(filePath);
     var contentType = 'text/html';
     switch (extname) {
@@ -21,7 +21,7 @@ var server = http.createServer(function (request, response) {
             break;
         case '.png':
             contentType = 'image/png';
-            break;      
+            break;
         case '.jpg':
             contentType = 'image/jpg';
             break;
@@ -30,22 +30,24 @@ var server = http.createServer(function (request, response) {
             break;
     }
 
-    fs.readFile(filePath, function(error, content) {
+    fs.readFile(filePath, function (error, content) {
         if (error) {
-            if(error.code == 'ENOENT'){
-                fs.readFile('./404.html', function(error, content) {
-                    response.writeHead(200, { 'Content-Type': contentType });
+            if (error.code == 'ENOENT') {
+                fs.readFile('./404.html', function (error, content) {
+                    response.writeHead(200, {
+                        'Content-Type': contentType
+                    });
                     response.end(content, 'utf-8');
                 });
-            }
-            else {
+            } else {
                 response.writeHead(500);
-                response.end('Sorry, check with the site admin for error: '+error.code+' ..\n');
-                response.end(); 
+                response.end('Sorry, check with the site admin for error: ' + error.code + ' ..\n');
+                response.end();
             }
-        }
-        else {
-            response.writeHead(200, { 'Content-Type': contentType });
+        } else {
+            response.writeHead(200, {
+                'Content-Type': contentType
+            });
             response.end(content, 'utf-8');
         }
     });
