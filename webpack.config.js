@@ -2,10 +2,10 @@ var webpack = require("webpack");
 
 module.exports = {
   mode: "development",
-  entry: __dirname + "/src/index.js",
+  entry: __dirname + "/src/main.js",
   output: {
     path: __dirname + "/dist/",
-    filename: "index.js",
+    filename: "main.js",
     publicPath: "dist"
   },
   devServer: {

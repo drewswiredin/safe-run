@@ -3,8 +3,8 @@ var fs = require('fs');
 var path = require('path');
 
 var server = http.createServer(function (request, response) {
-    var filePath = './dist' + request.url;
-    if (filePath == './dist/')
+    var filePath = './src' + request.url;
+    if (filePath == './src/')
         filePath = './src/index.html';
 
     var extname = path.extname(filePath);

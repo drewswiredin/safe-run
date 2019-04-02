@@ -2,7 +2,7 @@
   "name": "safe-run",
   "version": "1.0.3",
   "description": "Run unsafe JavaScript using WebWorkers",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "clean": "rimraf dist/*",
     "webpack": "webpack",
