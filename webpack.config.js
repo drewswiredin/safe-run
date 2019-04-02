@@ -6,7 +6,9 @@ module.exports = {
   output: {
     path: __dirname + "/dist/",
     filename: "main.js",
-    publicPath: "dist"
+    publicPath: "dist",
+    library: "safe-run",
+    libraryTarget: "umd"
   },
   devServer: {
     inline: true,
