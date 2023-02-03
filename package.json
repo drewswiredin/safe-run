@@ -1,6 +1,6 @@
 {
   "name": "safe-run",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Run unsafe JavaScript using WebWorkers",
   "main": "dist/main.js",
   "scripts": {

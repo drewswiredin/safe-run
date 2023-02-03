@@ -79,7 +79,7 @@ export default class Commander {
 
 
   spawnSoldier(soldierNum) {
-    this.soldiers[soldierNum] = new Worker(URL.createObjectURL(new Blob([`(${Soldier})()`])))
+    this.soldiers[soldierNum] = new Worker(URL.createObjectURL(new Blob([`(${Soldier})()`])), {type: 'module'})
     this.soldierStatuses[soldierNum] = "ready";
 
     this.soldiers[soldierNum].onmessage = message => {
